@@ -61,6 +61,11 @@ async function seedAdmin() {
 // Start
 const PORT = process.env.PORT;
 
+if (!PORT) {
+  console.error('PORT не задан! Railway сам подставляет PORT, не прописывайте значение по умолчанию.');
+  process.exit(1);
+}
+
 connectDB().then(async () => {
   await seedAdmin();
   app.listen(PORT, '0.0.0.0', () => {
