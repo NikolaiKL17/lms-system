@@ -63,7 +63,7 @@ const PORT = process.env.PORT || 3000;
 
 connectDB().then(async () => {
   await seedAdmin();
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`Сервер запущен на порту ${PORT}`);
     console.log(`Откройте http://localhost:${PORT}`);
   });
