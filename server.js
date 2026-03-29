@@ -59,12 +59,7 @@ async function seedAdmin() {
 }
 
 // Start
-const PORT = process.env.PORT;
-
-if (!PORT) {
-  console.error('PORT не задан! Railway сам подставляет PORT, не прописывайте значение по умолчанию.');
-  process.exit(1);
-}
+const PORT = process.env.PORT || 3000;
 
 connectDB().then(async () => {
   await seedAdmin();
