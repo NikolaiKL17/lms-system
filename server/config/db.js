@@ -6,9 +6,9 @@ dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 
 const connectDB = async () => {
-  console.log('MONGODB_URI:', process.env.MONGODB_URI);
+  console.log('MONGO_URI:', process.env.MONGO_URI);
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(process.env.MONGO_URI);
     console.log('MongoDB подключена успешно');
   } catch (err) {
     console.error('Ошибка подключения к MongoDB:', err.message);
