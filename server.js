@@ -59,12 +59,11 @@ async function seedAdmin() {
 }
 
 // Start
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 connectDB().then(async () => {
   await seedAdmin();
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Сервер запущен на порту ${PORT}`);
-    console.log(`Откройте http://localhost:${PORT}`);
   });
 });
